@@ -12,7 +12,7 @@ exports.aritcleList = function(req,res){
     });
 };
 
-exports.detailProduct = function(req,res){
+exports.detailArticle = function(req,res){
     
     article.findById(req.params.id ,function(err,data){   
          if(err)
@@ -23,11 +23,11 @@ exports.detailProduct = function(req,res){
      });  
 }
 
-exports.addProduct = function(req,res){   
+exports.addArticle = function(req,res){   
     var newArticle = new article(req.body);
     newArticle.save((err)=>{
-        if (err) res.send(err);
-            console.log(err);
+        if (err) 
+            res.send(err);           
         res.send("insertad");
     })
 }
