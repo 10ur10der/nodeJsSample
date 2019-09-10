@@ -4,7 +4,7 @@ var router = express.Router();
 var articleAPI = require('../api/articleAPI');
 
 router.get('/list',articleAPI.aritcleList);
-router.post('/add',articleAPI.addProduct);
-router.get('/detail/:id',articleAPI.detailProduct);
+router.post('/add',articleAPI.addArticle);
+router.get('/detail/:id',articleAPI.detailArticle);
 
 module.exports = router;
