@@ -1,20 +1,20 @@
-var article = require('../entities/article');
+var category = require('../entities/category');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
 
-exports.aritcleList = function(req,res){
+exports.categoryList = function(req,res){
    
-    article.find({},function(err,doc){
+    category.find({},function(err,doc){
         if(err)
             res.send(err);            
         res.json(doc);
     });
 };
 
-exports.detailArticle = function(req,res){
+exports.detailCategory = function(req,res){
     
-    article.findById(req.params.id ,function(err,data){   
+    category.findById(req.params.id ,function(err,data){   
          if(err)
             res.send(err);
          res.json(data);
@@ -23,9 +23,9 @@ exports.detailArticle = function(req,res){
      });  
 }
 
-exports.addArticle = function(req,res){   
-    var newArticle = new article(req.body);
-    newArticle.save((err)=>{
+exports.addCategory = function(req,res){   
+    var newCategory = new category(req.body);
+    newCategory.save((err)=>{
         if (err) 
             res.send(err);           
         res.send("insertad");
